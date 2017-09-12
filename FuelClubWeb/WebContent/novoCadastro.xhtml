@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+<title>Fuel Club - Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+<!-- CSS Files -->
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet"/>
+
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link href="css/font-awesome.min.css" rel="stylesheet"/>
+<link href="fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet"/>
+<link href="css/animate.css" rel="stylesheet" media="screen"/>
+<link href="css/owl.theme.css" rel="stylesheet"/>
+<link href="css/owl.carousel.css" rel="stylesheet"/>
+
+<!-- Colors -->
+<link href="css/css-app.css" rel="stylesheet" media="screen"/>
+<!-- <link href="css/css-app-green.css" rel="stylesheet" media="screen"> -->
+<!-- <link href="css/css-app-purple.css" rel="stylesheet" media="screen"> -->
+<!-- <link href="css/css-app-red.css" rel="stylesheet" media="screen"> -->
+<!-- <link href="css/css-app-orange.css" rel="stylesheet" media="screen"> -->
+<!-- <link href="css/css-app-yellow.css" rel="stylesheet" media="screen"> -->
+
+<!-- Google Fonts -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
+
+
+
+
+<!-- Google Fonts -->
+
+
+</h:head>
+
+<h:body>
+
+<div id="menu">
+	<nav class="navbar-wrapper navbar-default" role="navigation">
+		<div class="container">
+			  <div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
+				  <span class="sr-only">Toggle navigation</span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand site-name" href="#top"><img src="images/logo2.png" alt="logo"/></a>
+			  </div>
+	 
+			  <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Início</a></li>
+					<li><a href="login.xhtml">Acesso empresa</a></li>
+				</ul>
+			  </div>
+		</div>
+	</nav>
+</div>
+
+<div>
+	<div class="subscribe fullscreen parallax" style="background-image:url('images/bg.jpg');" data-img-width="1920" data-img-height="1281" data-diff="100">
+		<div>
+			<div class="container"><br/><br/>
+
+				<div>
+					
+					<h:form>
+						<p:panel header="Dados do Posto" styleClass="painel_cadastro">
+							<h:panelGrid cellpadding="10" columns="4">
+								<h:outputLabel for="cnpj" value="CNPJ:" styleClass="cadastro"/>
+								<p:inputMask id="login" value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_cnpj}" mask="99.999.999/9999-99" styleClass="cadastro"/>
+								
+								<h:outputLabel for="fantasia" value="Nome Fantasia:     " styleClass="cadastro"/>
+								<p:inputText id="nomeFantasia" value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_nomeFantasia}" style="width: 400px;" styleClass="cadastro"/>
+							
+								
+							</h:panelGrid>	<br />
+							
+							<h:panelGrid cellpadding="10" columns="4">
+								<h:outputLabel for="rua" value="Rua:" styleClass="cadastro"/>
+								<p:inputText id="rua" value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_rua}" style="width: 400px;" styleClass="cadastro"/>
+								
+								<h:outputLabel for="numero" value="Número:" styleClass="cadastro"/>
+								<p:inputText id="numero" value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_numero}" style="width: 100px;" styleClass="cadastro"/>
+							</h:panelGrid>		
+							<br />
+							<h:panelGrid cellpadding="10" columns="4">
+								
+								<h:outputLabel for="bairro" value="Bairro:" styleClass="cadastro"/>
+								<p:inputText id="bairro" value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_bairro}" style="width: 200px;" styleClass="cadastro"/>
+								
+								<h:outputLabel for="cep" value="CEP:" styleClass="cadastro"/>
+								<p:inputMask id="cep" value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_cep}" mask="99.999-999" style="width: 100px;" styleClass="cadastro"/>
+							</h:panelGrid>	<br/>
+							
+							<h:panelGrid cellpadding="10" columns="4">
+								
+								<h:outputLabel for="email" value="Email:" styleClass="cadastro"/>
+								<p:inputText id="email" value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_email}" style="width: 300px;" styleClass="cadastro"/>
+								
+								<h:outputLabel for="senha" value="Senha:" styleClass="cadastro"/>
+								<p:password id="senha" value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_senha}"
+										style="width: 200px;" styleClass="cadastro" feedback="true"
+										required="true" inline="true" promptLabel="Digite sua senha"
+										weakLabel="Fraca" goodLabel="Media" strongLabel="Forte"  />
+							</h:panelGrid><br /><br /><br /><br />
+							
+							<h:panelGrid cellpadding="10" columns="2">
+								
+								<p:commandButton value="Continuar Cadastro"
+								action="#{Posto_CombustivelBean.salvar}" ajax="false" />
+								
+							</h:panelGrid>
+						</p:panel>
+						
+							
+						
+					
+					
+					</h:form>					
+				
+				</div>
+
+			</div>	
+		</div>
+	</div>
+</div>
+
+<footer id="footer">
+	<div class="container">
+		<div class="col-sm-4 col-sm-offset-4">
+			<!-- /.social links -->
+				<div class="social text-center">
+					<ul>
+						<li><a class="wow fadeInUp" href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a class="wow fadeInUp" href="#" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
+						<li><a class="wow fadeInUp" href="#" data-wow-delay="0.4s"><i class="fa fa-google-plus"></i></a></li>
+						<li><a class="wow fadeInUp" href="#" data-wow-delay="0.6s"><i class="fa fa-instagram"></i></a></li>
+					</ul>
+				</div>	
+			<div class="text-center wow fadeInUp" style="font-size: 14px;">Copyright Fuel Club</div>
+			<a href="#" class="scrollToTop"><i class="pe-7s-up-arrow pe-va"></i></a>
+		</div>	
+	</div>	
+</footer>
+
+
+</h:body>
+
+<!-- /.javascript files -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/ekko-lightbox-min.js"></script>
+	<script type="text/javascript">
+	$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) { event.preventDefault(); $(this).ekkoLightbox(); }); 
+	</script>
+	<script>
+		new WOW().init();
+	</script>
+
+</html>
