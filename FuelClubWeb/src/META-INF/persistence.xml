@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="fuelclub" transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+
+		<properties>
+		    
+		    <!-- LOCAL  -->
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+            <property name="hibernate.connection.username" value="postgres" />
+            <property name="hibernate.connection.password" value="keymaster" />
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/fuelclub" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			
+			<!-- GORK 
+			
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+            <property name="hibernate.connection.username" value="postgres" />
+            <property name="hibernate.connection.password" value="@gfen1br" />
+            <property name="hibernate.connection.url" value="jdbc:postgresql://192.168.0.96:5432/siscur" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />-->
+			
+			
+			<!--   Integrator -
+			
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+            <property name="hibernate.connection.username" value="agfene" />
+            <property name="hibernate.connection.password" value="@gfe4En1br" />
+            <property name="hibernate.connection.url" value="jdbc:postgresql://127.0.0.1:5432/agfene_siscur" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />-->
+		
+			
+		</properties>
+	</persistence-unit>
+</persistence>
