@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15066435029530" configfile="/FuelClubWeb/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="areaRestrita.xhtml" id="pf15066435473791" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" outlinks="pf15066435473792" inlinks="pf15066435473792" path="areaRestrita.xhtml"/>
+  <links id="pf15066435473792" target="pf15066435473791" source="pf15066435473791" outcome="areaRestrita"/>
+</pageflow:Pageflow>

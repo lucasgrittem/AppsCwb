@@ -1,0 +1,169 @@
+@CHARSET "ISO-8859-1";
+
+#contato{
+	display:inline-block;	
+}
+#contato1{
+	display:inline-block;	
+	margin-left: 30px;
+}
+#centro{
+	margin-left: 150px;
+}
+
+#trabalhe{
+	
+	background:#FFFAFA;
+	width:100%;
+    height: 200px;
+    border-radius: 30% 3% 30% 3%;
+    	
+}
+#trabalhe1{
+	margin-left: 19%;
+	background:#FFFAFA;
+	width:60%;
+    height: 300px;
+    border-radius: 30% 3% 30% 3%;
+    	
+}
+#trabalhe3{
+	
+	background:#ebbd00;
+	width:100%;
+    height: 500px;
+    border-radius: 5px 5px 5px 5px;
+    	
+}
+#botao{
+	margin-top:6%;
+	margin-left:33%;
+	
+}
+#botao2{
+	margin-top:6%;
+	margin-left:6%;
+	
+}
+.cadastros{
+	
+	color: black;
+	background-color: #FFFAFA;
+	
+
+}
+.cadastros1{
+	color: black;
+	font-size: 16px;
+	width: 50%;
+
+
+}
+.cadastros2{
+	color: black;
+	font-size: 16px;
+	width: 90%;
+
+
+}
+.login1{
+	margin-left:34%;
+	width: 36%;
+	height: 50%;
+	background: #FFFAFA;	
+}
+.login4{
+	margin-left:30%;
+	width: 50%;
+	height: 50%;
+	background: #FFFAFA;	
+}
+.login2{
+	
+	background: #FFFAFA;
+	margin-left: 16%;
+
+	
+}
+.login3{
+	margin-left:20%;
+	width: 30%;
+	height: 50%;
+	background: #FFFAFA;	
+}
+.cadastros{
+	width: 100%;
+	
+}
+.trabalhe2{
+	
+	background:#FFFAFA;
+	padding: 10px;
+	width:100%;
+    height: 100%;
+    border-radius: 3% 3% 3% 3%;
+    	
+}
+.trabalhe3{
+	
+	background:#FFFAFA;
+	padding: 5px;
+	width:100%;
+    height: 100%;
+    border-radius: 3% 3% 3% 3%;
+    	
+}
+.administrador{
+	
+	margin-left: 2%;
+	margin-top: 10px;
+	
+}
+.verCandidato{
+	
+	color: #4169E1;
+	font-size: 16px;
+}
+.impressao-head{
+	
+	
+}
+.impressao-logo { 
+	margin-left: 80%;
+	margin-top: 1%;
+	display: inline-block;	
+}
+.impressao-body{
+
+	
+}
+.impressao-dados1{
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	display: inline-block;
+}
+.impressao-dados2{
+	display: inline-block;	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-left: 5px;
+}
+.impressao-titulo{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	display: inline-block;
+}
+.impressao-dados-subtitulo{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	display: inline-block;
+	
+}
+.crm_principal{
+	
+	display: inline-block;
+}
