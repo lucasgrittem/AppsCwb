@@ -167,3 +167,10 @@
 	
 	display: inline-block;
 }
+.logo {
+	display: inline-block;
+}
+.logo_2{
+ width: 980px;  min-width: 768px; max-width: 100%; margin: 0 auto; 
+	
+}
