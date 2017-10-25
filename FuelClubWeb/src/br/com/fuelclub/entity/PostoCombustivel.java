@@ -21,8 +21,6 @@ public class PostoCombustivel {
 	public String postoCombustivel_horarioFuncionamento;
 	public String postoCombustivel_email;
 	public String postoCombustivel_senha;
-	/*
-	
 	public Cidade cidade;
 	public Estado estado;
 	public Pais pais;
@@ -30,7 +28,8 @@ public class PostoCombustivel {
 	
 	public List <Dias_Da_Semana> diasDaSemana;
 	public List <Tipo_Pagamento> tipoPagamento;
-	public List <Cartao> cartoesAceitos;*/
+	public List <Cartao> cartoesAceitos;
+	
 	public Long getPostoCombustivel_id() {
 		return postoCombustivel_id;
 	}
