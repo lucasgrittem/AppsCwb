@@ -4,16 +4,15 @@ import java.util.List;
 
 import br.com.fuelclub.dao.TipoCombustivelDao;
 import br.com.fuelclub.entity.Tipo_Combustivel;
-import br.com.fuelclub.facade.TipoCombustivelFacade;
 
 public class TipoCombustivelBo implements InterfaceBo<Tipo_Combustivel>{
 
+	TipoCombustivelDao tipoCombustivelDao = new TipoCombustivelDao();
 	@Override
 	public void salvar(Tipo_Combustivel tipoCombustivel) throws Exception {
 
-		TipoCombustivelFacade tipoCombustivelFacade = new TipoCombustivelFacade();
 		try {
-			tipoCombustivelFacade.salvar(tipoCombustivel);
+			tipoCombustivelDao.salvar(tipoCombustivel);
 		} catch (Exception e) {
 			throw new Exception(e);
 		}
@@ -22,50 +21,30 @@ public class TipoCombustivelBo implements InterfaceBo<Tipo_Combustivel>{
 
 	@Override
 	public List<Tipo_Combustivel> listar() {
-
-		TipoCombustivelFacade tipoCombustivelFacade = new TipoCombustivelFacade();
-		return tipoCombustivelFacade.listar();
-		
+		return tipoCombustivelDao.listas();
 	}
 
 	@Override
 	public void editar(Tipo_Combustivel tipoCombustivel) {
-
-		TipoCombustivelFacade tipoCombustivelFacade = new TipoCombustivelFacade();
-		tipoCombustivelFacade.editar(tipoCombustivel);
-		
+		tipoCombustivelDao.editar(tipoCombustivel);
 	}
 
 	@Override
 	public Tipo_Combustivel getObjectTById(Long id) {
-		
-		TipoCombustivelFacade tipoCombustivelFacade = new TipoCombustivelFacade();
-		return tipoCombustivelFacade.getObjectTById(id);
-		
+		return tipoCombustivelDao.getObjectTById(id);
 	}
 
 	@Override
 	public void excluir(Tipo_Combustivel tipoCombustivel) {
-
-		TipoCombustivelFacade tipoCombustivelFacade = new TipoCombustivelFacade();
-		tipoCombustivelFacade.excluir(tipoCombustivel);
-		
+		tipoCombustivelDao.excluir(tipoCombustivel);
 	}
 	
 	public boolean existe(Tipo_Combustivel tipoCombustivel){
-		
 		List<Tipo_Combustivel> lista = new TipoCombustivelDao().listar(tipoCombustivel);		
-		
 		if(lista.size() > 0){
-			
 			return true;
-			
 		}else{
-			
 			return false;
-			
 		}
-			
 	}
-	
 }

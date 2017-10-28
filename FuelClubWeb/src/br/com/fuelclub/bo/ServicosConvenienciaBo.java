@@ -4,66 +4,46 @@ import java.util.List;
 
 import br.com.fuelclub.dao.ServicosConvenienciaDao;
 import br.com.fuelclub.entity.Servicos_Conveniencia;
-import br.com.fuelclub.facade.ServicosConvenienciaFacade;
 
 public class ServicosConvenienciaBo implements InterfaceBo<Servicos_Conveniencia>{
 
+	ServicosConvenienciaDao servicosConvenienciaDao = new ServicosConvenienciaDao();
 	@Override
 	public void salvar(Servicos_Conveniencia servicosConveniencia) throws Exception {
 
-		ServicosConvenienciaFacade servicosConvenienciaFacade = new ServicosConvenienciaFacade();
 		try {
-			servicosConvenienciaFacade.salvar(servicosConveniencia);
+			servicosConvenienciaDao.salvar(servicosConveniencia);
 		} catch (Exception e) {
 			throw new Exception(e);
 		}
-		
 	}
 
 	@Override
 	public List<Servicos_Conveniencia> listar() {
-
-		ServicosConvenienciaFacade servicosConvenienciaFacade = new ServicosConvenienciaFacade();
-		return servicosConvenienciaFacade.listar();
-		
+		return servicosConvenienciaDao.listas();
 	}
 
 	@Override
 	public void editar(Servicos_Conveniencia servicosConveniencia) {
-
-		ServicosConvenienciaFacade servicosConvenienciaFacade = new ServicosConvenienciaFacade();
-		servicosConvenienciaFacade.editar(servicosConveniencia);
-		
+		servicosConvenienciaDao.editar(servicosConveniencia);
 	}
 
 	@Override
 	public Servicos_Conveniencia getObjectTById(Long id) {
-
-		ServicosConvenienciaFacade servicosConvenienciaFacade = new ServicosConvenienciaFacade();
-		return servicosConvenienciaFacade.getObjectTById(id);
-		
+		return servicosConvenienciaDao.getObjectTById(id);
 	}
 
 	@Override
 	public void excluir(Servicos_Conveniencia servicosConveniencia) {
-
-		ServicosConvenienciaFacade servicosConvenienciaFacade = new ServicosConvenienciaFacade();
-		servicosConvenienciaFacade.excluir(servicosConveniencia);
-		
+		servicosConvenienciaDao.excluir(servicosConveniencia);
 	}
 
 	public boolean existe(Servicos_Conveniencia servicosConveniencia){
-		
 		List<Servicos_Conveniencia> lista = new ServicosConvenienciaDao().listar(servicosConveniencia);		
-		
 		if(lista.size() > 0){
-			
 			return true;
-			
 		}else{
-			
 			return false;
-			
 		}
 			
 	}

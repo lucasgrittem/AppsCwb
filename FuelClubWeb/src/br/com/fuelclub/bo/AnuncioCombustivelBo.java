@@ -2,53 +2,39 @@ package br.com.fuelclub.bo;
 
 import java.util.List;
 
-
+import br.com.fuelclub.dao.AnuncioCombustivelDao;
 import br.com.fuelclub.entity.Anuncio_Combustivel;
-import br.com.fuelclub.facade.AnuncioCombustivelFacade;
 
 public class AnuncioCombustivelBo implements InterfaceBo<Anuncio_Combustivel>{
 
+	AnuncioCombustivelDao anuncioCombustivelDao = new AnuncioCombustivelDao();
 	@Override
 	public void salvar(Anuncio_Combustivel anuncioCombustivel) throws Exception {
 
-		AnuncioCombustivelFacade anuncioCombustivelFacade = new AnuncioCombustivelFacade();
 		try {
-			anuncioCombustivelFacade.salvar(anuncioCombustivel);
+			anuncioCombustivelDao.salvar(anuncioCombustivel);
 		} catch (Exception e) {
 			throw new Exception(e);
 		}
-		
 	}
 
 	@Override
 	public List<Anuncio_Combustivel> listar() {
-
-		AnuncioCombustivelFacade anuncioCombustivelFacade = new AnuncioCombustivelFacade();
-		return anuncioCombustivelFacade.listar();
-		
+		return anuncioCombustivelDao.listas();
 	}
 
 	@Override
 	public void editar(Anuncio_Combustivel anuncioCombustivel) {
-
-		AnuncioCombustivelFacade anuncioCombustivelFacade = new AnuncioCombustivelFacade();
-		anuncioCombustivelFacade.editar(anuncioCombustivel);
-		
+		anuncioCombustivelDao.editar(anuncioCombustivel);
 	}
 
 	@Override
 	public Anuncio_Combustivel getObjectTById(Long id) {
-
-		AnuncioCombustivelFacade anuncioCombustivelFacade = new AnuncioCombustivelFacade();
-		return anuncioCombustivelFacade.getObjectTById(id);
-		
+		return anuncioCombustivelDao.getObjectTById(id);
 	}
 
 	@Override
 	public void excluir(Anuncio_Combustivel anuncioCombustivel) {
-
-		AnuncioCombustivelFacade anuncioCombustivelFacade = new AnuncioCombustivelFacade();
-		anuncioCombustivelFacade.excluir(anuncioCombustivel);
-		
+		anuncioCombustivelDao.excluir(anuncioCombustivel);
 	}
 }

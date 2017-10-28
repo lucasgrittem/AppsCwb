@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import br.com.fuelclub.bo.PostoCombustivelBo;
 import br.com.fuelclub.entity.PostoCombustivel;
-import br.com.fuelclub.facade.PostoCombustivelFacade;
 
 @ManagedBean (name = "Posto_CombustivelBean")
 @SessionScoped
@@ -66,8 +65,8 @@ public class Posto_CombustivelController implements Serializable {
 	
 	public String autenticar() throws IOException {
 		
-		PostoCombustivelFacade postoCombustivelFacade = new PostoCombustivelFacade();
-		this.posto_Combustivel = postoCombustivelFacade.autenticar(posto_Combustivel);
+		PostoCombustivelBo postoCombustivelBo = new PostoCombustivelBo();
+		this.posto_Combustivel = postoCombustivelBo.autenticar(posto_Combustivel);
 		
 		FacesContext fc = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
