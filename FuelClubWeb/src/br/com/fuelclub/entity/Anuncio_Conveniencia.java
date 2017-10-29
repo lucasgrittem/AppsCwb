@@ -9,7 +9,6 @@ public class Anuncio_Conveniencia {
 	public Date anuncioConveniencia_validade;
 	public Servicos_Conveniencia servicosConveniencia;
 	public PostoCombustivel postoCombustivel;
-	public Filial_Posto_Combustivel filialPostoCombustivel;
 	
 	
 	// get e set
@@ -39,13 +38,5 @@ public class Anuncio_Conveniencia {
 	public void setPostoCombustivel(PostoCombustivel postoCombustivel) {
 		this.postoCombustivel = postoCombustivel;
 	}
-	public Filial_Posto_Combustivel getFilialPostoCombustivel() {
-		return filialPostoCombustivel;
-	}
-	public void setFilialPostoCombustivel(Filial_Posto_Combustivel filialPostoCombustivel) {
-		this.filialPostoCombustivel = filialPostoCombustivel;
-	}
-	
-	
 
 }

@@ -5,7 +5,6 @@ public class Cidade {
 	private Long cidade_id;
 	private String cidade_descricao;
 	private Estado estado;
-	private Pais pais;
 	
 	//get e set
 	
@@ -27,13 +26,5 @@ public class Cidade {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
-	public Pais getPais() {
-		return pais;
-	}
-	public void setPais(Pais pais) {
-		this.pais = pais;
-	}
-	
-	
 
 }

@@ -23,7 +23,6 @@ public class PostoCombustivel {
 	public String postoCombustivel_senha;
 	public Cidade cidade;
 	public Estado estado;
-	public Pais pais;
 	public Bandeira bandeira;
 	
 	public List <Dias_Da_Semana> diasDaSemana;

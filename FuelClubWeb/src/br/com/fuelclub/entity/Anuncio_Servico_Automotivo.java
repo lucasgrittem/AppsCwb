@@ -9,9 +9,6 @@ public class Anuncio_Servico_Automotivo {
 	public Date anuncioServicoAutomotivo_validade;
 	public Servicos_Automotivos servicosAutomotivos;
 	public PostoCombustivel postoCombustivel;
-	public Filial_Posto_Combustivel filialPostoCombustivel;
-	
-	
 	//get e set
 	
 	
@@ -39,14 +36,5 @@ public class Anuncio_Servico_Automotivo {
 	public void setPostoCombustivel(PostoCombustivel postoCombustivel) {
 		this.postoCombustivel = postoCombustivel;
 	}
-	public Filial_Posto_Combustivel getFilialPostoCombustivel() {
-		return filialPostoCombustivel;
-	}
-	public void setFilialPostoCombustivel(Filial_Posto_Combustivel filialPostoCombustivel) {
-		this.filialPostoCombustivel = filialPostoCombustivel;
-	}
-	
-	
-	
 
 }

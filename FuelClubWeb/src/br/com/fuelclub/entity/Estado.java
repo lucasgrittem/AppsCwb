@@ -5,7 +5,6 @@ public class Estado {
 	private Long estado_id;
 	private String estado_descricao;
 	private String estado_uf;
-	private Pais pais;
 	
 	//get e set
 	
@@ -27,14 +26,6 @@ public class Estado {
 	public void setEstado_uf(String estado_uf) {
 		this.estado_uf = estado_uf;
 	}
-	public Pais getPais() {
-		return pais;
-	}
-	public void setPais(Pais pais) {
-		this.pais = pais;
-	}
-	
-	
 	
 
 }

@@ -7,7 +7,6 @@ public class Anuncio_Combustivel {
 	private int anuncioCombustivel_id;
 	private float anuncioCombustivel_preco;
 	private PostoCombustivel postoCombustivel;
-	private Filial_Posto_Combustivel filialPostoCombustivel;
 	private Date anuncioCombustivel_validade;
 	private Tipo_Combustivel tipoCombustivel;
 	
@@ -32,12 +31,6 @@ public class Anuncio_Combustivel {
 	}
 	public void setPostoCombustivel(PostoCombustivel postoCombustivel) {
 		this.postoCombustivel = postoCombustivel;
-	}
-	public Filial_Posto_Combustivel getFilialPostoCombustivel() {
-		return filialPostoCombustivel;
-	}
-	public void setFilialPostoCombustivel(Filial_Posto_Combustivel filialPostoCombustivel) {
-		this.filialPostoCombustivel = filialPostoCombustivel;
 	}
 	public Date getAnuncioCombustivel_validade() {
 		return anuncioCombustivel_validade;
