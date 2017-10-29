@@ -4,13 +4,12 @@ import java.util.Date;
 
 public class Anuncio_Combustivel {
 	
-	
-	public int anuncioCombustivel_id;
-	public float anuncioCombustivel_preco;
-	public PostoCombustivel postoCombustivel;
-	public Filial_Posto_Combustivel filialPostoCombustivel;
-	public Date anuncioCombustivel_validade;
-	public Tipo_Combustivel tipoCombustivel;
+	private int anuncioCombustivel_id;
+	private float anuncioCombustivel_preco;
+	private PostoCombustivel postoCombustivel;
+	private Filial_Posto_Combustivel filialPostoCombustivel;
+	private Date anuncioCombustivel_validade;
+	private Tipo_Combustivel tipoCombustivel;
 	
 	
 	// get e set

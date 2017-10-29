@@ -46,7 +46,10 @@ public class CidadeBo implements InterfaceBo<Cidade>{
 			return false;
 		}
 	}
-
+	
+	public List<Cidade> listarPorEstado(Long id){
+		return new CidadeDao().listarPorEstado(id);
+	}
 	
 
 }

@@ -2,15 +2,19 @@ package br.com.fuelclub.entity;
 
 public class Cidade {
 	
-	
-	public String cidade_descricao;
-	public Estado estado;
-	public Pais pais;
-	
+	private Long cidade_id;
+	private String cidade_descricao;
+	private Estado estado;
+	private Pais pais;
 	
 	//get e set
 	
-	
+	public Long getCidade_id() {
+		return cidade_id;
+	}
+	public void setCidade_id(Long cidade_id) {
+		this.cidade_id = cidade_id;
+	}
 	public String getCidade_descricao() {
 		return cidade_descricao;
 	}

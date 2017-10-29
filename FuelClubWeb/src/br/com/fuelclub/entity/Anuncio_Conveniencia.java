@@ -5,7 +5,7 @@ import java.util.Date;
 public class Anuncio_Conveniencia {
 	
 	
-	public float anuncioConveniencia_preco;
+	public Float anuncioConveniencia_preco;
 	public Date anuncioConveniencia_validade;
 	public Servicos_Conveniencia servicosConveniencia;
 	public PostoCombustivel postoCombustivel;

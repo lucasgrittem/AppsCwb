@@ -2,16 +2,13 @@ package br.com.fuelclub.entity;
 
 public class Administrador_Sistema {
 	
-	
-	public String administradorSistema_nome;
-	public String administradorSistema_usuario;
-	public String administradorSistema_senha;
-	public String administradorSistema_email;
-	public double administradorSistema_telefone;
-	
+	private String administradorSistema_nome;
+	private String administradorSistema_usuario;
+	private String administradorSistema_senha;
+	private String administradorSistema_email;
+	private String administradorSistema_telefone;
 	
 	//get e set
-	
 	
 	public String getAdministradorSistema_nome() {
 		return administradorSistema_nome;
@@ -37,15 +34,11 @@ public class Administrador_Sistema {
 	public void setAdministradorSistema_email(String administradorSistema_email) {
 		this.administradorSistema_email = administradorSistema_email;
 	}
-	public double getAdministradorSistema_telefone() {
+	public String getAdministradorSistema_telefone() {
 		return administradorSistema_telefone;
 	}
-	public void setAdministradorSistema_telefone(double administradorSistema_telefone) {
+	public void setAdministradorSistema_telefone(String administradorSistema_telefone) {
 		this.administradorSistema_telefone = administradorSistema_telefone;
 	}
-	
-	
-	
-	
 
 }
