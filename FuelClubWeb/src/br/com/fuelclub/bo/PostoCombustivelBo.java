@@ -38,10 +38,6 @@ public class PostoCombustivelBo implements InterfaceBo<PostoCombustivel>{
 		postoCombustivelDao.excluir(postoCombustivel);
 	}
 	
-	public PostoCombustivel autenticar (PostoCombustivel postoCombustivel){
-		return postoCombustivelDao.autenticar(postoCombustivel);
-	}
-
 	public boolean existe(PostoCombustivel postoCombustivel){
 		List<PostoCombustivel> lista = new PostoCombustivelDao().listar(postoCombustivel);		
 		if(lista.size() > 0){

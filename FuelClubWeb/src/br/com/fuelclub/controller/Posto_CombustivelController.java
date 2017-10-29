@@ -63,29 +63,6 @@ public class Posto_CombustivelController implements Serializable {
 		
 	}
 	
-	public String autenticar() throws IOException {
-		
-		PostoCombustivelBo postoCombustivelBo = new PostoCombustivelBo();
-		this.posto_Combustivel = postoCombustivelBo.autenticar(posto_Combustivel);
-		
-		FacesContext fc = FacesContext.getCurrentInstance();
-		HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
-		session.setAttribute("POSTO_COMBUSTIVEL", this.posto_Combustivel);
-		
-		if(this.posto_Combustivel != null){
-			
-			return "sucesso";
-		}
-		else{
-			
-			posto_Combustivel = new PostoCombustivel();
-			FacesContext context = FacesContext.getCurrentInstance();
-			context.addMessage("mensagensErro", new FacesMessage("Login ou Senha Incorretos!"));
-			
-			return "loginAdm";
-			
-		}
-	}
 	
 	public String novoCadastro() throws IOException{
 		

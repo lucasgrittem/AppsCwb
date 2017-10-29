@@ -109,6 +109,7 @@ public class Empresa {
 			return false;
 		return true;
 	}
+	
 	@Override
 	public String toString() {
 		return "Empresa [empresa_nome_fantasia=" + empresa_nome_fantasia + "]";

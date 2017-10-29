@@ -58,29 +58,10 @@ public class PostoCombustivelDao implements InterfaceDao<PostoCombustivel>{
 	public List<PostoCombustivel> listar(PostoCombustivel postoCombustivel) {
 
 		EntityManager em = Conexao.getEntityManager();
-		Query q =em.createQuery("select a from PostoCombustivel a where postoCombustivel_cnpj = '" + postoCombustivel.postoCombustivel_cnpj + "'");
+		Query q =em.createQuery("select a from PostoCombustivel a where postoCombustivel_cnpj = '" + postoCombustivel.getPostoCombustivel_cnpj() + "'");
 
 		return q.getResultList();
 		
 	}
 	
-	public PostoCombustivel autenticar(PostoCombustivel postoCombustivel){
-		
-		EntityManager em = Conexao.getEntityManager();
-		
-		Query q = em.createQuery("select a from PostoCombustivel a where postoCombustivel_cnpj = '" + postoCombustivel.postoCombustivel_cnpj +"' "
-				+ "and postoCombustivel_senha = '" + postoCombustivel.postoCombustivel_senha + "'");
-		
-		PostoCombustivel postoCombustivelRet = new PostoCombustivel();
-		
-		if (q.getResultList().size() == 0){
-			return null;
-		}
-		else{
-			postoCombustivelRet = (PostoCombustivel) q.getSingleResult();
-			return postoCombustivelRet;
-		}
-		
-	}
-
 }
