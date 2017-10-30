@@ -19,7 +19,25 @@ public class Empresa {
 	private String empresa_email;
 	private String empresa_senha;
 	private String empresa_login;
+	private String empresa_telefone_principal;
 	
+	public Empresa(Long empresa_id, String empresa_cnpj, String empresa_nome_fantasia, String empresa_email,
+			String empresa_senha, String empresa_login, String empresa_telefone_principal) {
+		super();
+		this.empresa_id = empresa_id;
+		this.empresa_cnpj = empresa_cnpj;
+		this.empresa_nome_fantasia = empresa_nome_fantasia;
+		this.empresa_email = empresa_email;
+		this.empresa_senha = empresa_senha;
+		this.empresa_login = empresa_login;
+		this.empresa_telefone_principal = empresa_telefone_principal;
+	}
+	public String getEmpresa_telefone_principal() {
+		return empresa_telefone_principal;
+	}
+	public void setEmpresa_telefone_principal(String empresa_telefone_principal) {
+		this.empresa_telefone_principal = empresa_telefone_principal;
+	}
 	public Long getEmpresa_id() {
 		return empresa_id;
 	}
@@ -66,6 +84,7 @@ public class Empresa {
 		result = prime * result + ((empresa_login == null) ? 0 : empresa_login.hashCode());
 		result = prime * result + ((empresa_nome_fantasia == null) ? 0 : empresa_nome_fantasia.hashCode());
 		result = prime * result + ((empresa_senha == null) ? 0 : empresa_senha.hashCode());
+		result = prime * result + ((empresa_telefone_principal == null) ? 0 : empresa_telefone_principal.hashCode());
 		return result;
 	}
 	@Override
@@ -106,6 +125,11 @@ public class Empresa {
 			if (other.empresa_senha != null)
 				return false;
 		} else if (!empresa_senha.equals(other.empresa_senha))
+			return false;
+		if (empresa_telefone_principal == null) {
+			if (other.empresa_telefone_principal != null)
+				return false;
+		} else if (!empresa_telefone_principal.equals(other.empresa_telefone_principal))
 			return false;
 		return true;
 	}

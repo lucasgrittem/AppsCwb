@@ -87,8 +87,8 @@
 					<div id="trabalhe1">
 						<br />
 						<h:form>
-							<br /><br />
 							<p:growl id="mensagensErro" showDetail="true" sticky="true" />
+							<br /><br />
 
 							<h:panelGrid columns="1" cellpadding="6" styleClass="login1">
 
@@ -96,23 +96,23 @@
 									styleClass="cadastros1" />
 
 								<p:inputText id="login"
-									value=""
+									value="#{EmpresaBean.empresa.empresa_login}"
 									required="false" styleClass="cadastros" /><br/>
 
 								<h:outputLabel for="senha" value="Senha"
 									styleClass="cadastros1" />
 
 								<p:password id="senha"
-									value=""
+									value="#{EmpresaBean.empresa.empresa_senha}"
 									styleClass="cadastros" required="false" inline="true" />
 								<br />
 								<h:panelGrid columns="2" styleClass="login2">
 									<p:commandButton value="Entrar"
-										
-										update="" />
+										action="#{EmpresaBean.autenticar}"
+										update="mensagensErro" />
 									<p:commandButton value="Esqueci"
 										
-										update="" />
+										update="mensagensErro" />
 								</h:panelGrid>
 							</h:panelGrid>
 						</h:form>

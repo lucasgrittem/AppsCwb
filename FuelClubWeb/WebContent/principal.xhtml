@@ -13,17 +13,15 @@
 			<h:form>
 				<p:panel header="Bem vindo!" styleClass="bemvindo">
 					<h:panelGrid columns="2" cellpadding="5" styleClass="administrador">
-						<h:outputText value="Usuário logado:"/>
-						<h:outputText value="#{AdministradorBean.administrador.administrador_nome}"/>
-						<h:outputText value="Email:"/>
-						<h:outputText value="#{AdministradorBean.administrador.administrador_email}"/>
+						<h:outputText value="CNPJ"/>
+						<h:outputText value="#{EmpresaBean.empresa.empresa_cnpj}"/>
+						<h:outputText value="Nome Fantasia"/>
+						<h:outputText value="#{EmpresaBean.empresa.empresa_nome_fantasia}"/>
+						<h:outputText value="Email"/>
+						<h:outputText value="#{EmpresaBean.empresa.empresa_email}"/>
 						<h:outputText value="Telefone:"/>
-						<h:outputText value="#{AdministradorBean.administrador.administrador_telefone}"/>
-						<h:outputText value="Função:"/>
-						<h:outputText value="#{AdministradorBean.administrador.administrador_funcao}"/>
-						<h:outputText value="Departamento:"/>
-						<h:outputText value="#{AdministradorBean.administrador.administrador_departamento}"/>
-						<p:commandButton value="Alterar Cadastro" action="#{AdministradorBean.alterarCadastro}"/>
+						<h:outputText value="#{EmpresaBean.empresa.empresa_telefone_principal}"/>
+						<p:commandButton value="Alterar Cadastro"/>
 					</h:panelGrid>				
 				</p:panel>
 			</h:form>				

@@ -25,6 +25,10 @@
 					<p:inputText id="email"
 						value="#{EmpresaBean.empresaNovo.empresa_email}" required="true"
 						style="width: 300px;" />
+					<h:outputLabel for="telefone" value="Telefone" />
+					<p:inputMask id="telefone"
+						value="#{EmpresaBean.empresaNovo.empresa_telefone_principal}" required="true"
+						style="width: 160px;" mask="(99) 99999-999?9" />
 					<h:outputLabel for="login" value="Login" />
 					<p:inputText id="login"
 						value="#{EmpresaBean.empresaNovo.empresa_login}"
