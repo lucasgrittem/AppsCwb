@@ -166,7 +166,7 @@ public String recuperarSenha () throws IOException{
 		fc = getCurrentInstance();
 		session = (HttpSession) fc.getExternalContext().getSession(false);
 		session.setAttribute("EMPRESA", this.empresa);
-		FacesContext.getCurrentInstance().getExternalContext().redirect("arearestrita.xhtml");
+		FacesContext.getCurrentInstance().getExternalContext().redirect("areaRestrita.xhtml");
 		return "logoutAdm";
 	}
 	
