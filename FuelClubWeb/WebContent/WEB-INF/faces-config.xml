@@ -19,5 +19,20 @@
       <to-view-id>areaRestrita.xhtml</to-view-id>
     </navigation-case>    
   </navigation-rule>
+  
+  <navigation-rule>
+    <from-view-id>loginAdmSys.xhtml</from-view-id>
+    <navigation-case>
+      <from-outcome>sucesso</from-outcome>
+      <to-view-id>administrar.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>*</from-view-id>
+    <navigation-case>
+      <from-outcome>logoutAdmSys</from-outcome>
+      <to-view-id>loginAdmSys.xhtml</to-view-id>
+    </navigation-case>    
+  </navigation-rule>
 
 </faces-config>

@@ -17,6 +17,7 @@ import br.com.fuelclub.bo.AdministradorSistemaBo;
 import br.com.fuelclub.bo.CidadeBo;
 import br.com.fuelclub.bo.EmpresaBo;
 import br.com.fuelclub.bo.EstadoBo;
+import br.com.fuelclub.email.EmailJava;
 import br.com.fuelclub.entity.Administrador_Sistema;
 import br.com.fuelclub.entity.Cidade;
 import br.com.fuelclub.entity.Empresa;
@@ -139,5 +140,49 @@ public class Administrador_SistemaController implements Serializable{
 
 	public String alterarCadastro(){
 		return "alterarCadastro";
+	}
+	
+	public String autenticar() throws IOException {
+		AdministradorSistemaBo administradorBo = new AdministradorSistemaBo();
+		this.administrador = administradorBo.autenticarUsuario(administrador);
+		fc = FacesContext.getCurrentInstance();
+		session = (HttpSession) fc.getExternalContext().getSession(false);
+		session.setAttribute("ADMINISTRADOR", this.administrador);
+		if(this.administrador != null){
+			return "sucesso";
+		}
+		else{
+			administrador = new Administrador_Sistema();
+			fc = getCurrentInstance();
+			fc.addMessage("mensagensErro", new FacesMessage("Login ou Senha Incorretos!"));
+			return "loginAdm";
+
+		}
+	}
+
+	public String recuperarSenhaEmpresa() throws IOException{
+		AdministradorSistemaBo administradorBo = new AdministradorSistemaBo();
+		this.administrador = administradorBo.recuperarSenha(administrador_recuperar);
+		if(this.administrador != null){
+			EmailJava emailJava = new EmailJava();
+			emailJava.enviarEmailAdm(administrador);
+			fc = getCurrentInstance();
+			fc.addMessage("mensagensErro", new FacesMessage("Email enviado com sucesso! Enviado para: " + administrador.getAdministrador_sistema_email()));
+			return "enviado";
+		}
+		else{
+			FacesContext context = getCurrentInstance();
+			context.addMessage("mensagensErro", new FacesMessage("Usuário não cadastrado"));
+			return "erro";
+		}
+	}
+	
+	public String sair() throws IOException{
+		administrador = new Administrador_Sistema();
+		fc = getCurrentInstance();
+		session = (HttpSession) fc.getExternalContext().getSession(false);
+		session.setAttribute("ADMINISTRADOR", this.administrador);
+		FacesContext.getCurrentInstance().getExternalContext().redirect("loginAdmSys.xhtml");
+		return "logoutAdm";
 	}
 }

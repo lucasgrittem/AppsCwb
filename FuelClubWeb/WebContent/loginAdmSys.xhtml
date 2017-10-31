@@ -103,17 +103,17 @@
 								<h:outputLabel for="login" value="Usuário"
 									styleClass="cadastros1" />
 								<p:inputText id="login"
-									value="#{EmpresaBean.empresa.empresa_login}" required="false"
+									value="#{AdministradorSistemaBean.administrador.administrador_sistema_usuario}" required="false"
 									styleClass="cadastros" />
 								<br />
 								<h:outputLabel for="senha" value="Senha" styleClass="cadastros1" />
 								<p:password id="senha"
-									value="#{EmpresaBean.empresa.empresa_senha}"
+									value="#{AdministradorSistemaBean.administrador.administrador_sistema_senha}"
 									styleClass="cadastros" required="false" inline="true" />
 								<br />
 								<h:panelGrid columns="2" styleClass="login2">
 									<p:commandButton value="Entrar"
-										action="#{EmpresaBean.autenticar}" update="mensagensErro" />
+										action="#{AdministradorSistemaBean.autenticar}" update="mensagensErro" />
 									<p:commandButton value="Esqueci" update="mensagensErro" />
 								</h:panelGrid>
 							</h:panelGrid>

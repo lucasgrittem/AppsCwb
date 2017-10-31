@@ -46,6 +46,29 @@ public class AdministradorSistemaDao implements InterfaceDao <Administrador_Sist
 		em.getTransaction().commit();
 	}
 	
+	public Administrador_Sistema recuperarSenha(Administrador_Sistema administradorSistema){
+		
+		em = Conexao.getEntityManager();
+		Query q = em.createQuery("select a from Administrador_Sistema a "
+				+ "where administrador_sistema_usuario = '" + administradorSistema.getAdministrador_sistema_usuario() + "' or "
+						+ "administrador_sistema_email = '" + administradorSistema.getAdministrador_sistema_email() + "'");
+		Administrador_Sistema admRecuperacao = new Administrador_Sistema();
+		if(q.getResultList().size() == 0){
+			return null;
+		}
+		else{
+			admRecuperacao = (Administrador_Sistema) q.getSingleResult();
+			return admRecuperacao;
+		}
+		
+	}
+	
+	public List<Administrador_Sistema> verificaCadastro(Administrador_Sistema administrador){
+		em = Conexao.getEntityManager();
+		Query q = em.createQuery("select a from Administrador_Sistema a where a.administrador_sistema_usuario = '" + administrador.getAdministrador_sistema_usuario() + "'");
+		return q.getResultList();
+	}
+	
 	
 	public Administrador_Sistema listar(Administrador_Sistema administradorSistema) {
 		Query q =em.createQuery("select a from Administrador_Sistema a "+

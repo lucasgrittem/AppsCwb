@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15066435029530" configfile="/FuelClubWeb/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="areaRestrita.xhtml" id="pf15093210691380" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15093210691381" path="areaRestrita.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="principal.xhtml" id="pf15093210691382" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15093210691381" path="principal.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="areaRestrita.xhtml" x="338" y="178" id="pf15093210691380" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15093210691381" inlinks="pf15094931459030" path="areaRestrita.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="principal.xhtml" x="554" y="178" id="pf15093210691382" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15093210691381" path="principal.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="178" id="pf15094931459032" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf15094931459030 pf15094931599536" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="loginAdmSys.xhtml" id="pf15094931459033" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15094931459034" inlinks="pf15094931599536" path="loginAdmSys.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="administrar.xhtml" id="pf15094931459035" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15094931459034" path="administrar.xhtml"/>
   <links id="pf15093210691381" target="pf15093210691382" source="pf15093210691380" outcome="sucesso"/>
+  <links id="pf15094931459030" target="pf15093210691380" source="pf15094931459032" outcome="logoutAdm"/>
+  <links id="pf15094931459034" target="pf15094931459035" source="pf15094931459033" outcome="sucesso"/>
+  <links id="pf15094931599536" target="pf15094931459033" source="pf15094931459032" outcome="logoutAdmSys"/>
 </pageflow:Pageflow>

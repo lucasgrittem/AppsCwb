@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="templateAdmSys.xhtml">
+
+	<br />
+	<div class="principal">
+		
+			<h:form>
+				<p:panel header="Bem vindo!" styleClass="bemvindo">
+					<h:panelGrid columns="2" cellpadding="5" styleClass="administrador">
+						<h:outputText value="Nome"/>
+						<h:outputText value="#{AdministradorSistemaBean.administrador.administrador_sistema_nome}"/>
+						<h:outputText value="Usuário"/>
+						<h:outputText value="#{AdministradorSistemaBean.administrador.administrador_sistema_usuario}"/>
+						<h:outputText value="Email"/>
+						<h:outputText value="#{AdministradorSistemaBean.administrador.administrador_sistema_email}"/>
+						<h:outputText value="Telefone:"/>
+						<h:outputText value="#{AdministradorSistemaBean.administrador.administrador_sistema_telefone}"/>
+						<p:commandButton value="Alterar Cadastro"/>
+					</h:panelGrid>				
+				</p:panel>
+			</h:form>				
+	
+	</div>
+
+	
+</ui:decorate>

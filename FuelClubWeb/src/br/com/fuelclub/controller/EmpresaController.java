@@ -146,7 +146,7 @@ public class EmpresaController implements Serializable{
 		this.empresa = administradorBo.recuperarSenha(empresaRecuperar);
 		if(this.empresa != null){
 			EmailJava emailJava = new EmailJava();
-			emailJava.enviarEmailCandidato(empresa);
+			emailJava.enviarEmailEmpresa(empresa);
 			fc = getCurrentInstance();
 			fc.addMessage("mensagensErro", new FacesMessage("Email enviado com sucesso! Enviado para: " + empresa.getEmpresa_email()));
 			return "enviado";
