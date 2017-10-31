@@ -26,7 +26,7 @@ import br.com.fuelclub.entity.Estado;
 public class EmpresaController implements Serializable{
 
 	private static final long serialVersionUID = -4204106460659777965L;
-	
+
 	private Empresa empresa;
 	private Empresa empresaNovo;
 	private Empresa empresaRecuperar;
@@ -34,7 +34,7 @@ public class EmpresaController implements Serializable{
 	private List<Cidade> cidades;
 	private HttpSession session;
 	private FacesContext fc;
-	
+
 	public Empresa getEmpresa() {
 		return empresa;
 	}
@@ -80,13 +80,13 @@ public class EmpresaController implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 	public EmpresaController (){
 		empresa = new Empresa();
 		empresaNovo = new Empresa();
 		empresaRecuperar = new Empresa();
 	}
-	
+
 	public String salvar() throws Exception{
 		fc = getCurrentInstance();
 		EmpresaBo empresaBo;
@@ -102,22 +102,19 @@ public class EmpresaController implements Serializable{
 		empresaNovo = new Empresa();
 		return "sucesso";
 	}
-	
-public String recuperarSenha () throws IOException{
-		
+
+	public String recuperarSenha () throws IOException{
 		FacesContext.getCurrentInstance().getExternalContext().redirect("recuperarSenhaAdministrador.xhtml");
-		
 		return "recuperar";
-		
 	}
-	
+
 	public String salvarEditar() throws Exception{
 		fc = getCurrentInstance();
 		EmpresaBo empresaBo;
 		try{
 			empresaBo = new EmpresaBo();
 			empresaBo.editar(empresa);
-			
+
 		}catch (Exception e){
 			fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(),""));
 			return "administrador";
@@ -125,7 +122,7 @@ public String recuperarSenha () throws IOException{
 		fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Usuário alterado com sucesso", "Sucesso"));
 		return "sucesso";
 	}
-	
+
 	public String autenticar() throws IOException {
 		EmpresaBo empresaBo = new EmpresaBo();
 		this.empresa = empresaBo.autenticarUsuario(empresa);
@@ -140,10 +137,10 @@ public String recuperarSenha () throws IOException{
 			fc = getCurrentInstance();
 			fc.addMessage("mensagensErro", new FacesMessage("Login ou Senha Incorretos!"));
 			return "loginAdm";
-			
+
 		}
 	}
-	
+
 	public String recuperarSenhaEmpresa() throws IOException{
 		EmpresaBo administradorBo = new EmpresaBo();
 		this.empresa = administradorBo.recuperarSenha(empresaRecuperar);
@@ -160,7 +157,7 @@ public String recuperarSenha () throws IOException{
 			return "erro";
 		}
 	}
-	
+
 	public String sair() throws IOException{
 		empresa = new Empresa();
 		fc = getCurrentInstance();
@@ -169,11 +166,11 @@ public String recuperarSenha () throws IOException{
 		FacesContext.getCurrentInstance().getExternalContext().redirect("areaRestrita.xhtml");
 		return "logoutAdm";
 	}
-	
+
 	public List<Estado> listarEstado(){
 		return new EstadoBo().listar();
 	}
-	
+
 	public List<Cidade> listarPorEstado (ValueChangeEvent evento){
 		CidadeBo cidadeBo = new CidadeBo();
 		estado = (Estado) evento.getNewValue();
@@ -182,10 +179,10 @@ public String recuperarSenha () throws IOException{
 		cidades = cidadeBo.listarPorEstado(id);
 		return cidades;
 	}
-	
+
 	public String alterarCadastro(){
 		return "alterarCadastro";
 	}
-	
-	
+
+
 }

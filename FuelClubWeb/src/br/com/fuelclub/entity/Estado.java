@@ -1,5 +1,6 @@
 package br.com.fuelclub.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,7 @@ public class Estado {
 	
 	@Id
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
+	@Column (name="estado_id", insertable = true, updatable = false)
 	private Long estado_id;
 	
 	private String estado_descricao;
