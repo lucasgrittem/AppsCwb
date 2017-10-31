@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="templateAdmSys.xhtml">
+
+	<br />
+	<div class="principal">
+
+		<h:form>
+			<p:panel header="Cadastro de Administrador do Sistema" styleClass="bemvindo">
+				<h:panelGrid columns="2" cellpadding="5" styleClass="administrador">
+					<h:outputLabel for="nome" value="Nome" />
+					<p:inputText id="nome"
+						value="#{AdministradorSistemaBean.administrador_novo.administrador_sistema_nome}" required="true"
+						style="width: 300px;" />
+					<h:outputLabel for="usuario" value="Usuário" />
+					<p:inputText id="usuario"
+						value="#{AdministradorSistemaBean.administrador_novo.administrador_sistema_usuario}"
+						required="true" style="width: 300px;" />
+					<h:outputLabel for="senha" value="Senha" />
+					<p:password id="senha"
+						value="#{AdministradorSistemaBean.administrador_novo.administrador_sistema_senha}"
+						style="width: 200px;" styleClass="cadastros" feedback="true"
+						required="true" inline="true" promptLabel="Digite sua senha"
+						weakLabel="Fraca" goodLabel="Media" strongLabel="Forte" />
+					<h:outputLabel for="email" value="Email" />
+					<p:inputText id="email"
+						value="#{AdministradorSistemaBean.administrador_novo.administrador_sistema_email}" required="true"
+						style="width: 300px;" />
+					<h:outputLabel for="telefone" value="Telefone" />
+					<p:inputMask id="telefone"
+						value="#{AdministradorSistemaBean.administrador_novo.administrador_sistema_telefone}" required="true"
+						style="width: 160px;" mask="(99) 99999-999?9" />
+					<p:commandButton value="Cadastrar"
+					action="#{AdministradorSistemaBean.salvar}" ajax="false" />
+
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+
+	</div>
+
+
+</ui:decorate>

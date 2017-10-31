@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -21,6 +22,7 @@ public class Cidade {
 	private Long cidade_id;
 	
 	@OneToOne
+	@JoinColumn (name="estado_id")
 	private Estado estado;
 	private String cidade_descricao;
 	
