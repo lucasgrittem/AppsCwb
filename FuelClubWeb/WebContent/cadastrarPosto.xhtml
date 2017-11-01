@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="templateAdm.xhtml">
+	<br />
+	<div class="principal">
+		<h:form>
+			<p:panel header="Cadastro de Empresa" styleClass="bemvindo">
+				<h:panelGrid columns="2" cellpadding="5" styleClass="administrador">
+					<h:outputLabel for="filial" value="Este Posto é Filial?" />
+					<p:selectBooleanButton id="filial"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_isFilial}"
+						onLabel="Sim" offLabel="Não" style="width:60px" />
+					<h:outputLabel for="cnpj" value="CNPJ" />
+					<p:inputMask id="cnpj"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_cnpj}"
+						required="true" style="width: 160px;" mask="99.999.999/9999-99" />
+					<h:outputLabel for="nomeFantasia" value="Nome Fantasia" />
+					<p:inputText id="nomeFantasia"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_nomeFantasia}"
+						required="true" style="width: 300px;" />
+					<h:outputLabel for="email" value="Email" />
+					<p:inputText id="email"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_email}"
+						required="true" style="width: 300px;" />
+					<h:outputLabel for="telefone" value="Telefone" />
+					<p:inputMask id="telefone"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_telefone}"
+						required="true" style="width: 160px;" mask="(99) 99999-999?9" />
+				</h:panelGrid>
+				<h:panelGrid columns="5" cellpadding="5" styleClass="administrador">
+					<h:outputLabel for="horarioFuncionamento"
+						value="Horário de Funcionamento:" />
+					<h:outputLabel for="das" value="Das" />
+					<p:inputText id="das"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_horarioFuncionamento_das}"
+						required="true" style="width: 80px;" />
+					<h:outputLabel for="de" value="Até às" />
+					<p:inputText id="ate"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_horarioFuncionamento_ate}"
+						required="true" style="width: 80px;" />
+				</h:panelGrid>
+				<h:panelGrid columns="2" cellpadding="5" styleClass="administrador">
+					<h:outputLabel for="rua" value="Rua" />
+					<p:inputText id="rua"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_rua}"
+						required="true" style="width: 280px;" />
+					<h:outputLabel for="nro" value="Número" />
+					<p:inputNumber id="nro"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_numero}"
+						required="true" style="width: 70px;" />
+					<h:outputLabel for="cep" value="CEP" />
+					<p:inputMask id="cep"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_cep}"
+						required="true" style="width: 150px;" mask="99.999.-999" />
+					<h:outputLabel value="Estado" />
+					<h:selectOneMenu value="#{Posto_CombustivelBean.posto_Combustivel.estado}"
+						converter="toEstadoConverter" id="estado"
+						valueChangeListener="#{Posto_CombustivelBean.listarPorEstado}"
+						style="width:40px" ajax="true">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{Posto_CombustivelBean.listarEstado()}"
+							var="estado" itemLabel="#{estado.estado_sigla}"
+							itemValue="#{estado}" />
+						<f:ajax event="change" render="cidade" />
+					</h:selectOneMenu>
+					<h:outputLabel value="Cidade" />
+					<h:selectOneMenu value="#{Posto_CombustivelBean.posto_Combustivel.cidade}"
+						converter="toCidadeConverter" id="cidade" style="width:250px">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{Posto_CombustivelBean.cidades}" var="cidade"
+							itemLabel="#{cidade.cidade_descricao}" itemValue="#{cidade}" />
+					</h:selectOneMenu>
+					<p:commandButton value="Cadastrar Posto"
+						action="#{EmpresaBean.salvar}" ajax="true" />
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</div>
+</ui:decorate>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="templateAdm.xhtml">
+	<br />
+	<div class="principal">
+		<h:form>
+			<p:panel header="Cadastro de Empresa" styleClass="bemvindo">
+				<h:panelGrid columns="2" cellpadding="5" styleClass="administrador">
+					<h:outputLabel for="cnpj" value="CNPJ" />
+					<p:inputMask id="cnpj"
+						value="#{EmpresaBean.empresaNovo.empresa_cnpj}" required="true"
+						style="width: 160px;" mask="99.999.999/9999-99" />
+					<h:outputLabel for="nomeFantasia" value="Nome Fantasia" />
+					<p:inputText id="nomeFantasia"
+						value="#{EmpresaBean.empresaNovo.empresa_nome_fantasia}"
+						required="true" style="width: 300px;" />
+					<h:outputLabel for="email" value="Email" />
+					<p:inputText id="email"
+						value="#{EmpresaBean.empresaNovo.empresa_email}" required="true"
+						style="width: 300px;" />
+					<h:outputLabel for="telefone" value="Telefone" />
+					<p:inputMask id="telefone"
+						value="#{EmpresaBean.empresaNovo.empresa_telefone_principal}" required="true"
+						style="width: 160px;" mask="(99) 99999-999?9" />
+					<h:outputLabel for="login" value="Login" />
+					<p:inputText id="login"
+						value="#{EmpresaBean.empresaNovo.empresa_login}"
+						required="true" style="width: 200px;" />
+					<h:outputLabel for="senha" value="Senha" />
+					<p:password id="senha"
+						value="#{EmpresaBean.empresaNovo.empresa_senha}"
+						style="width: 200px;" styleClass="cadastros" feedback="true"
+						required="true" inline="true" promptLabel="Digite sua senha"
+						weakLabel="Fraca" goodLabel="Media" strongLabel="Forte" />
+					<p:commandButton value="Cadastrar Posto"
+					action="#{EmpresaBean.salvar}" ajax="false" />
+
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</div>
+</ui:decorate>

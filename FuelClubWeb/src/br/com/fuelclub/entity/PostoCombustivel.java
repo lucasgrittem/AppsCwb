@@ -18,8 +18,10 @@ public class PostoCombustivel {
 	private int postoCombustivel_numero;
 	private String postoCombustivel_bairro;
 	private String postoCombustivel_cep;
-	private String postoCombustivel_horarioFuncionamento;
+	private String postoCombustivel_horarioFuncionamento_das;
+	private String postoCombustivel_horarioFuncionamento_ate;
 	private String postoCombustivel_email;
+	private String postoCombustivel_telefone;
 	private String postoCombustivel_senha;
 	private Boolean postoCombustivel_isFilial;
 	@ManyToOne
@@ -34,7 +36,6 @@ public class PostoCombustivel {
 	public List <Tipo_Pagamento> tipoPagamento;
 	@ManyToMany
 	public List <Cartao> cartoesAceitos;
-	
 	public Long getPostoCombustivel_id() {
 		return postoCombustivel_id;
 	}
@@ -77,17 +78,29 @@ public class PostoCombustivel {
 	public void setPostoCombustivel_cep(String postoCombustivel_cep) {
 		this.postoCombustivel_cep = postoCombustivel_cep;
 	}
-	public String getPostoCombustivel_horarioFuncionamento() {
-		return postoCombustivel_horarioFuncionamento;
+	public String getPostoCombustivel_horarioFuncionamento_das() {
+		return postoCombustivel_horarioFuncionamento_das;
 	}
-	public void setPostoCombustivel_horarioFuncionamento(String postoCombustivel_horarioFuncionamento) {
-		this.postoCombustivel_horarioFuncionamento = postoCombustivel_horarioFuncionamento;
+	public void setPostoCombustivel_horarioFuncionamento_das(String postoCombustivel_horarioFuncionamento_das) {
+		this.postoCombustivel_horarioFuncionamento_das = postoCombustivel_horarioFuncionamento_das;
+	}
+	public String getPostoCombustivel_horarioFuncionamento_ate() {
+		return postoCombustivel_horarioFuncionamento_ate;
+	}
+	public void setPostoCombustivel_horarioFuncionamento_ate(String postoCombustivel_horarioFuncionamento_ate) {
+		this.postoCombustivel_horarioFuncionamento_ate = postoCombustivel_horarioFuncionamento_ate;
 	}
 	public String getPostoCombustivel_email() {
 		return postoCombustivel_email;
 	}
 	public void setPostoCombustivel_email(String postoCombustivel_email) {
 		this.postoCombustivel_email = postoCombustivel_email;
+	}
+	public String getPostoCombustivel_telefone() {
+		return postoCombustivel_telefone;
+	}
+	public void setPostoCombustivel_telefone(String postoCombustivel_telefone) {
+		this.postoCombustivel_telefone = postoCombustivel_telefone;
 	}
 	public String getPostoCombustivel_senha() {
 		return postoCombustivel_senha;
@@ -150,8 +163,10 @@ public class PostoCombustivel {
 		result = prime * result + ((postoCombustivel_cep == null) ? 0 : postoCombustivel_cep.hashCode());
 		result = prime * result + ((postoCombustivel_cnpj == null) ? 0 : postoCombustivel_cnpj.hashCode());
 		result = prime * result + ((postoCombustivel_email == null) ? 0 : postoCombustivel_email.hashCode());
-		result = prime * result + ((postoCombustivel_horarioFuncionamento == null) ? 0
-				: postoCombustivel_horarioFuncionamento.hashCode());
+		result = prime * result + ((postoCombustivel_horarioFuncionamento_ate == null) ? 0
+				: postoCombustivel_horarioFuncionamento_ate.hashCode());
+		result = prime * result + ((postoCombustivel_horarioFuncionamento_das == null) ? 0
+				: postoCombustivel_horarioFuncionamento_das.hashCode());
 		result = prime * result + ((postoCombustivel_id == null) ? 0 : postoCombustivel_id.hashCode());
 		result = prime * result + ((postoCombustivel_isFilial == null) ? 0 : postoCombustivel_isFilial.hashCode());
 		result = prime * result
@@ -159,6 +174,7 @@ public class PostoCombustivel {
 		result = prime * result + postoCombustivel_numero;
 		result = prime * result + ((postoCombustivel_rua == null) ? 0 : postoCombustivel_rua.hashCode());
 		result = prime * result + ((postoCombustivel_senha == null) ? 0 : postoCombustivel_senha.hashCode());
+		result = prime * result + ((postoCombustivel_telefone == null) ? 0 : postoCombustivel_telefone.hashCode());
 		result = prime * result + ((tipoPagamento == null) ? 0 : tipoPagamento.hashCode());
 		return result;
 	}
@@ -216,10 +232,15 @@ public class PostoCombustivel {
 				return false;
 		} else if (!postoCombustivel_email.equals(other.postoCombustivel_email))
 			return false;
-		if (postoCombustivel_horarioFuncionamento == null) {
-			if (other.postoCombustivel_horarioFuncionamento != null)
+		if (postoCombustivel_horarioFuncionamento_ate == null) {
+			if (other.postoCombustivel_horarioFuncionamento_ate != null)
 				return false;
-		} else if (!postoCombustivel_horarioFuncionamento.equals(other.postoCombustivel_horarioFuncionamento))
+		} else if (!postoCombustivel_horarioFuncionamento_ate.equals(other.postoCombustivel_horarioFuncionamento_ate))
+			return false;
+		if (postoCombustivel_horarioFuncionamento_das == null) {
+			if (other.postoCombustivel_horarioFuncionamento_das != null)
+				return false;
+		} else if (!postoCombustivel_horarioFuncionamento_das.equals(other.postoCombustivel_horarioFuncionamento_das))
 			return false;
 		if (postoCombustivel_id == null) {
 			if (other.postoCombustivel_id != null)
@@ -248,6 +269,11 @@ public class PostoCombustivel {
 				return false;
 		} else if (!postoCombustivel_senha.equals(other.postoCombustivel_senha))
 			return false;
+		if (postoCombustivel_telefone == null) {
+			if (other.postoCombustivel_telefone != null)
+				return false;
+		} else if (!postoCombustivel_telefone.equals(other.postoCombustivel_telefone))
+			return false;
 		if (tipoPagamento == null) {
 			if (other.tipoPagamento != null)
 				return false;
@@ -261,10 +287,11 @@ public class PostoCombustivel {
 	}
 	public PostoCombustivel(Long postoCombustivel_id, String postoCombustivel_cnpj,
 			String postoCombustivel_nomeFantasia, String postoCombustivel_rua, int postoCombustivel_numero,
-			String postoCombustivel_bairro, String postoCombustivel_cep, String postoCombustivel_horarioFuncionamento,
-			String postoCombustivel_email, String postoCombustivel_senha, Boolean postoCombustivel_isFilial,
-			Cidade cidade, Estado estado, Bandeira bandeira, List<Dias_Da_Semana> diasDaSemana,
-			List<Tipo_Pagamento> tipoPagamento, List<Cartao> cartoesAceitos) {
+			String postoCombustivel_bairro, String postoCombustivel_cep,
+			String postoCombustivel_horarioFuncionamento_das, String postoCombustivel_horarioFuncionamento_ate,
+			String postoCombustivel_email, String postoCombustivel_telefone, String postoCombustivel_senha,
+			Boolean postoCombustivel_isFilial, Cidade cidade, Estado estado, Bandeira bandeira,
+			List<Dias_Da_Semana> diasDaSemana, List<Tipo_Pagamento> tipoPagamento, List<Cartao> cartoesAceitos) {
 		super();
 		this.postoCombustivel_id = postoCombustivel_id;
 		this.postoCombustivel_cnpj = postoCombustivel_cnpj;
@@ -273,8 +300,10 @@ public class PostoCombustivel {
 		this.postoCombustivel_numero = postoCombustivel_numero;
 		this.postoCombustivel_bairro = postoCombustivel_bairro;
 		this.postoCombustivel_cep = postoCombustivel_cep;
-		this.postoCombustivel_horarioFuncionamento = postoCombustivel_horarioFuncionamento;
+		this.postoCombustivel_horarioFuncionamento_das = postoCombustivel_horarioFuncionamento_das;
+		this.postoCombustivel_horarioFuncionamento_ate = postoCombustivel_horarioFuncionamento_ate;
 		this.postoCombustivel_email = postoCombustivel_email;
+		this.postoCombustivel_telefone = postoCombustivel_telefone;
 		this.postoCombustivel_senha = postoCombustivel_senha;
 		this.postoCombustivel_isFilial = postoCombustivel_isFilial;
 		this.cidade = cidade;
@@ -288,7 +317,5 @@ public class PostoCombustivel {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 	
 }

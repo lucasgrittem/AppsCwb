@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
@@ -34,13 +35,7 @@ public class EmpresaController implements Serializable{
 	private List<Cidade> cidades;
 	private HttpSession session;
 	private FacesContext fc;
-
-	public Empresa getEmpresa() {
-		return empresa;
-	}
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}
+	
 	public Empresa getEmpresaNovo() {
 		return empresaNovo;
 	}
