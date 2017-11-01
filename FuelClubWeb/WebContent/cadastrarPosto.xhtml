@@ -7,7 +7,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	template="templateAdm.xhtml">
 	<br />
-	<div class="principal">
+	<div>
 		<h:form>
 			<p:panel header="Cadastro de Empresa" styleClass="bemvindo">
 				<h:panelGrid columns="2" cellpadding="5" styleClass="administrador">
@@ -53,12 +53,17 @@
 					<p:inputNumber id="nro"
 						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_numero}"
 						required="true" style="width: 70px;" />
+					<h:outputLabel for="bairro" value="Bairro" />
+					<p:inputNumber id="bairro"
+						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_bairro}"
+						required="true" style="width: 100px;" />
 					<h:outputLabel for="cep" value="CEP" />
 					<p:inputMask id="cep"
 						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_cep}"
 						required="true" style="width: 150px;" mask="99.999.-999" />
 					<h:outputLabel value="Estado" />
-					<h:selectOneMenu value="#{Posto_CombustivelBean.posto_Combustivel.estado}"
+					<h:selectOneMenu
+						value="#{Posto_CombustivelBean.posto_Combustivel.estado}"
 						converter="toEstadoConverter" id="estado"
 						valueChangeListener="#{Posto_CombustivelBean.listarPorEstado}"
 						style="width:40px" ajax="true">
@@ -69,11 +74,13 @@
 						<f:ajax event="change" render="cidade" />
 					</h:selectOneMenu>
 					<h:outputLabel value="Cidade" />
-					<h:selectOneMenu value="#{Posto_CombustivelBean.posto_Combustivel.cidade}"
+					<h:selectOneMenu
+						value="#{Posto_CombustivelBean.posto_Combustivel.cidade}"
 						converter="toCidadeConverter" id="cidade" style="width:250px">
 						<f:selectItem itemLabel="" itemValue="" />
-						<f:selectItems value="#{Posto_CombustivelBean.cidades}" var="cidade"
-							itemLabel="#{cidade.cidade_descricao}" itemValue="#{cidade}" />
+						<f:selectItems value="#{Posto_CombustivelBean.cidades}"
+							var="cidade" itemLabel="#{cidade.cidade_descricao}"
+							itemValue="#{cidade}" />
 					</h:selectOneMenu>
 					<p:commandButton value="Cadastrar Posto"
 						action="#{EmpresaBean.salvar}" ajax="true" />
