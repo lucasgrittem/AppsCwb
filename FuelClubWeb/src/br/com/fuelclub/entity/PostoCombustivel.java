@@ -29,13 +29,15 @@ public class PostoCombustivel {
 	@ManyToOne
 	private Estado estado;
 	@ManyToOne
+	private Empresa empresa;
+	@ManyToOne
 	private Bandeira bandeira;
 	@ManyToMany
-	public List <Dias_Da_Semana> diasDaSemana;
+	private List <Dias_Da_Semana> diasDaSemana;
 	@ManyToMany
-	public List <Tipo_Pagamento> tipoPagamento;
+	private List <Tipo_Pagamento> tipoPagamento;
 	@ManyToMany
-	public List <Cartao> cartoesAceitos;
+	private List <Cartao> cartoesAceitos;
 	public Long getPostoCombustivel_id() {
 		return postoCombustivel_id;
 	}
@@ -126,6 +128,12 @@ public class PostoCombustivel {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
 	public Bandeira getBandeira() {
 		return bandeira;
 	}
@@ -158,6 +166,7 @@ public class PostoCombustivel {
 		result = prime * result + ((cartoesAceitos == null) ? 0 : cartoesAceitos.hashCode());
 		result = prime * result + ((cidade == null) ? 0 : cidade.hashCode());
 		result = prime * result + ((diasDaSemana == null) ? 0 : diasDaSemana.hashCode());
+		result = prime * result + ((empresa == null) ? 0 : empresa.hashCode());
 		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
 		result = prime * result + ((postoCombustivel_bairro == null) ? 0 : postoCombustivel_bairro.hashCode());
 		result = prime * result + ((postoCombustivel_cep == null) ? 0 : postoCombustivel_cep.hashCode());
@@ -206,6 +215,11 @@ public class PostoCombustivel {
 			if (other.diasDaSemana != null)
 				return false;
 		} else if (!diasDaSemana.equals(other.diasDaSemana))
+			return false;
+		if (empresa == null) {
+			if (other.empresa != null)
+				return false;
+		} else if (!empresa.equals(other.empresa))
 			return false;
 		if (estado == null) {
 			if (other.estado != null)
@@ -290,7 +304,7 @@ public class PostoCombustivel {
 			String postoCombustivel_bairro, String postoCombustivel_cep,
 			String postoCombustivel_horarioFuncionamento_das, String postoCombustivel_horarioFuncionamento_ate,
 			String postoCombustivel_email, String postoCombustivel_telefone, String postoCombustivel_senha,
-			Boolean postoCombustivel_isFilial, Cidade cidade, Estado estado, Bandeira bandeira,
+			Boolean postoCombustivel_isFilial, Cidade cidade, Estado estado, Empresa empresa, Bandeira bandeira,
 			List<Dias_Da_Semana> diasDaSemana, List<Tipo_Pagamento> tipoPagamento, List<Cartao> cartoesAceitos) {
 		super();
 		this.postoCombustivel_id = postoCombustivel_id;
@@ -308,6 +322,7 @@ public class PostoCombustivel {
 		this.postoCombustivel_isFilial = postoCombustivel_isFilial;
 		this.cidade = cidade;
 		this.estado = estado;
+		this.empresa = empresa;
 		this.bandeira = bandeira;
 		this.diasDaSemana = diasDaSemana;
 		this.tipoPagamento = tipoPagamento;
@@ -317,5 +332,6 @@ public class PostoCombustivel {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 }

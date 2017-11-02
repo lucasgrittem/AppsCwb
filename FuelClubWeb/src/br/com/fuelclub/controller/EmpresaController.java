@@ -36,6 +36,12 @@ public class EmpresaController implements Serializable{
 	private HttpSession session;
 	private FacesContext fc;
 	
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
 	public Empresa getEmpresaNovo() {
 		return empresaNovo;
 	}

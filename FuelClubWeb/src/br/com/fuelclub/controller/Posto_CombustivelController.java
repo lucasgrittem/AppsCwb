@@ -93,6 +93,7 @@ public class Posto_CombustivelController implements Serializable {
 	public String salvar(){
 		context = getCurrentInstance();
 		PostoCombustivelBo postoCombustivelBo;
+		posto_Combustivel.setEmpresa(empresaBean.getEmpresa());
 		try{
 			postoCombustivelBo = new PostoCombustivelBo();
 			postoCombustivelBo.salvar(posto_Combustivel);
