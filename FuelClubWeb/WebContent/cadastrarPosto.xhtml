@@ -62,25 +62,21 @@
 						value="#{Posto_CombustivelBean.posto_Combustivel.postoCombustivel_cep}"
 						required="true" style="width: 150px;" mask="99.999.-999" />
 					<h:outputLabel value="Estado" />
-					<h:selectOneMenu
-						value="#{Posto_CombustivelBean.posto_Combustivel.estado}"
-						converter="toEstadoConverter" id="estado"
-						valueChangeListener="#{Posto_CombustivelBean.listarPorEstado}"
-						style="width:40px" ajax="true">
+					<h:selectOneMenu value="#{Posto_CombustivelBean.posto_Combustivel.estado}"
+						converter="toEstadoConverter" id="estado" valueChangeListener="#{Posto_CombustivelBean.listarPorEstado}"					
+						style="width:50px" ajax="true">
 						<f:selectItem itemLabel="" itemValue="" />
 						<f:selectItems value="#{Posto_CombustivelBean.listarEstado()}"
 							var="estado" itemLabel="#{estado.estado_sigla}"
-							itemValue="#{estado}" />
-						<f:ajax event="change" render="cidade" />
+							itemValue="#{estado}"/>
+						<f:ajax event="change" render="cidade"/>
 					</h:selectOneMenu>
 					<h:outputLabel value="Cidade" />
-					<h:selectOneMenu
-						value="#{Posto_CombustivelBean.posto_Combustivel.cidade}"
-						converter="toCidadeConverter" id="cidade" style="width:250px">
+					<h:selectOneMenu value="#{Posto_CombustivelBean.posto_Combustivel.cidade}"
+						converter="toCidadeConverter" id="cidade" style="width:200px">
 						<f:selectItem itemLabel="" itemValue="" />
-						<f:selectItems value="#{Posto_CombustivelBean.cidades}"
-							var="cidade" itemLabel="#{cidade.cidade_descricao}"
-							itemValue="#{cidade}" />
+						<f:selectItems value="#{Posto_CombustivelBean.cidades}" var="cidade"
+							itemLabel="#{cidade.cidade_descricao}" itemValue="#{cidade}" />
 					</h:selectOneMenu>
 					<p:commandButton value="Cadastrar Posto"
 						action="#{EmpresaBean.salvar}" ajax="true" />
